@@ -1,0 +1,9 @@
+<div class="container">
+    <h2>Ajouter un fichier PPTX</h2>
+    <input type="file" (change)="onFileSelected($event)" accept=".pptx">
+    <p *ngIf="fileName">Fichier sélectionné: {{ fileName }}</p>
+    <div class="buttons">
+      <button (click)="onUpload()" class="btn">Ajouter</button>
+      <button (click)="onReset()" class="btn btn-reset">Réinitialiser</button>
+    </div>
+  </div>
