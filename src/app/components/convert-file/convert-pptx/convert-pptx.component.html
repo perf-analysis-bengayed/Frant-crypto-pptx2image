@@ -30,13 +30,32 @@
     <button (click)="onReset()" class="btn btn-reset">Réinitialiser</button>
   </div>
 
-  <!-- Liste des images générées -->
-  <div *ngIf="imageList.length > 0">
-      <h3>Images générées :</h3>
-      <div *ngFor="let image of imageList">
-        <img [src]="image" alt="Image générée" class="generated-image">
-      </div>
-   </div>
+
+  
+  
 
 </div>
+<br>
+<br>
+
+
+<div class="image-container">
+  <div class="image-grid" [style.gridTemplateColumns]="'repeat(' + imagesPerRow + ', 1fr)'">
+    <div *ngFor="let image of imageList1" class="image-item">
+      <img [src]="image" alt="Image" [ngStyle]="{'width': imageWidth + 'px', 'height': imageHeight + 'px'}">
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="controls">
+  <button (click)="onReset()" class="btn btn-reset">Réinitialiser</button>
+  <input type="range" id="range" min="1" [max]="imageList1.length" (input)="onRangeChange($event)">
+<label for="range">Nombre d'images par ligne : {{ imagesPerRow }}</label>
+
+</div>
+
+
+
 

@@ -96,3 +96,71 @@ label[for="pptxFileInput"] {
 }
 
 
+.controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+input[type="range"] {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-width: 100%; /* or set to a specific width */
+    overflow-x: auto;
+    padding-bottom: 10px; /* Add space for the scrollbar if needed */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+ 
+    overflow-y: auto; /* Barre de défilement verticale si nécessaire */
+    height: 300px; /* Hauteur fixe pour permettre le défilement si trop d'images */
+    padding-right: 10px; /* Espacement pour la barre de défilement */
+ 
+    max-height: 500px; /* Hauteur maximale pour le conteneur d'images */
+  /* Active le défilement vertical si nécessaire */
+  margin-bottom: 80px; 
+}
+
+
+.image-grid {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.image-item img {
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.controls {
+  display: flex;
+  /* Aligne verticalement les éléments */
+  justify-content: center;
+  margin-top: 20px;
+
+}
+
+.controls label {
+  margin-right: auto; /* Pousse les autres éléments vers la droite */
+}
+
+/* Pour réduire l'espace entre les éléments */
+.controls button, .controls input[type='range'] {
+  margin-right: 20px; /* Ajustez selon vos besoins */
+}
+.range-label {
+  text-align: center; /* Centre le texte du label */
+  margin-bottom: 10px; /* Espacement avant l'input */
+}
+
