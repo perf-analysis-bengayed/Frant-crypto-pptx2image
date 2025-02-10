@@ -1,12 +1,15 @@
 .container {
-  width: 50%;
+  width: 70%;
   margin: auto;
   text-align: center;
-  padding: 20px;
+  padding: 30px;
   border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   background-color: #f9f9f9;
+}
+.file-cours{
+  color: #e4483d;
 }
 
 h2 {
@@ -28,11 +31,68 @@ input[type="file"] {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #007bff;
+  background-color: #66a8ee;
   color: white;
   font-size: 16px;
 }
 
 .btn-reset {
-  background-color: #dc3545;
+  background-color: #cc2939;
 }
+
+
+.file-input {
+position: relative;
+margin-bottom: 20px;
+}
+
+.file-input input[type='file'] {
+opacity: 0;
+}
+
+.file-input label {
+cursor: pointer;
+}
+/* Pour rendre le texte de h2 en gras */
+h2 {
+  font-weight: bold; /* ou 700 pour un style plus fort */
+}
+
+/* Pour rendre le texte de h5 flou */
+h5 {
+  text-shadow: none;
+  filter: blur(0.5px); /* Ajustez la valeur selon votre préférence */
+}
+label[for="pptxFileInput"] {
+  color: rgb(0, 0, 0); /* Couleur du texte */
+  background-color: rgb(226, 94, 71); /* Couleur de l'arrière-plan */
+}
+.drop-zone {
+  display: none;
+}
+
+.drop-zone.active {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  background-color: rgba(0,0,0,0.2);
+  border-radius: inherit;
+}
+
+.file-input:hover .drop-zone {
+}
+/* Style for the label */
+.file-label {
+  font-size: 16px;            /* Adjust font size */
+  font-weight: bold;          /* Bold text */
+  color: #333;                /* Dark text color */
+  cursor: pointer;           /* Pointer cursor on hover */
+  background-color: #f0f0f0; /* Light background */
+  padding: 10px 15px;         /* Add padding */
+  border-radius: 5px;         /* Rounded corners */
+  display: inline-block;      /* Make the label inline block */
+}
+
+

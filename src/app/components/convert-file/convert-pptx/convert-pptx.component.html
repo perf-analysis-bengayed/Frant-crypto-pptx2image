@@ -1,9 +1,42 @@
 <div class="container">
-    <h2>Ajouter un fichier PPTX</h2>
-    <input type="file" (change)="onFileSelected($event)" accept=".pptx">
+  <h2>Convertir Pptx en images</h2>
+  <h5>Convertissez vos documents Pptx en images avec une précision incroyable.
+    Alimenté par Solid Documents.</h5>
+  
+  <!-- Champ personnalisé -->
+  <div class="file-input" 
+       (dragover)="onDragOver($event)" 
+       (drop)="onDrop($event)">
+    <input type="file" (change)="onFileSelected($event)" accept=".pptx" id="pptxFileInput">
+
+    <label for="pptxFileInput"class="file-label">Sélectionner un fichier .Pptx</label>
     <p *ngIf="fileName">Fichier sélectionné: {{ fileName }}</p>
-    <div class="buttons">
-      <button (click)="onUpload()" class="btn">Ajouter</button>
-      <button (click)="onReset()" class="btn btn-reset">Réinitialiser</button>
+    
+    <!-- Affichage état upload -->
+    <p *ngIf="uploading" class="file-cours">En cours d'upload...</p>
+    
+    <!-- Gestion erreur -->
+    <p *ngIf="error">{{ error }}</p>
+
+    <!-- Zone de dépôt visible lors du survol -->
+    <div class="drop-zone" [class.active]="isDraggingOver">
+      Déposez un fichier PPTX ici
     </div>
   </div>
+
+  <!-- Boutons actions -->
+  <div class="buttons">
+    <button (click)="convertAndDisplayUrl()" class="btn" [disabled]="!fileName || uploading">Convertir votre fichier Pptx</button>
+    <button (click)="onReset()" class="btn btn-reset">Réinitialiser</button>
+  </div>
+
+  <!-- Liste des images générées -->
+  <div *ngIf="imageList.length > 0">
+      <h3>Images générées :</h3>
+      <div *ngFor="let image of imageList">
+        <img [src]="image" alt="Image générée" class="generated-image">
+      </div>
+   </div>
+
+</div>
+
