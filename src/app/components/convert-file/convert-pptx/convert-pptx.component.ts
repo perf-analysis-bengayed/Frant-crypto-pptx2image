@@ -36,7 +36,7 @@ export class ConvertPptxComponent {
     getRange(n: number): number[] {
       return Array(n).fill(0).map((_, i) => i);
     }
-    imagesPerRow: number = 3; // Valeur initiale
+    imagesPerRow: number = 5; // Valeur initiale
   imageWidth: number = 150; // Largeur initiale des images
   imageHeight: number = 150; // Hauteur initiale des images
   constructor(private convertService: ConvertService) {}

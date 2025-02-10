@@ -118,11 +118,9 @@ input[type="range"] {
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
- 
     overflow-y: auto; /* Barre de défilement verticale si nécessaire */
     height: 300px; /* Hauteur fixe pour permettre le défilement si trop d'images */
     padding-right: 10px; /* Espacement pour la barre de défilement */
- 
     max-height: 500px; /* Hauteur maximale pour le conteneur d'images */
   /* Active le défilement vertical si nécessaire */
   margin-bottom: 80px; 
@@ -132,8 +130,8 @@ input[type="range"] {
 .image-grid {
   display: grid;
   gap: 10px;
-  width: 100%;
-  max-width: 800px;
+  justify-content: center; /* Centre les images dans la grille */
+  align-items: center; /* Centre les images dans la grille */
 }
 
 .image-item img {
